@@ -7,19 +7,19 @@ from cookiecutter import main
 CCDS_ROOT = Path(__file__).parents[1].resolve()
 
 args = {
-        'project_name': 'DrivenData',
-        'author_name': 'DrivenData',
+        'project_name': 'AwesomeProject',
+        'author_name': 'AwesomeName',
+        'description': 'A very awesome project.',
         'open_source_license': 'BSD-3-Clause',
-        'python_interpreter': 'python'
+        'python_interpreter': 'python',
+        'version': '0.1.0'
         }
-
 
 def system_check(basename):
     platform = sys.platform
     if 'linux' in platform:
         basename = basename.lower()
     return basename
-
 
 @pytest.fixture(scope='class', params=[{}, args])
 def default_baked_project(tmpdir_factory, request):
@@ -34,14 +34,15 @@ def default_baked_project(tmpdir_factory, request):
         output_dir=out_dir
     )
 
-    pn = pytest.param.get('project_name') or 'project_name'
+    project_name = pytest.param.get('project_name') or 'project_name'
     
     # project name gets converted to lower case on Linux but not Mac
-    pn = system_check(pn)
+    project_name = system_check(project_name)
 
-    proj = out_dir / pn
-    request.cls.path = proj
+    project_path = out_dir/project_name
+    request.cls.project_path = project_path
     yield 
 
     # cleanup after
     shutil.rmtree(out_dir)
+    
