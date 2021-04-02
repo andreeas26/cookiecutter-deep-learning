@@ -80,4 +80,7 @@ The directory structure of your new project looks like this:
 └── run.py                  <- Simplifies the execution of one or more of the src scripts 
 ```
 
-## TODO: update tests
+### Running the tests
+------------
+
+    py.test tests
