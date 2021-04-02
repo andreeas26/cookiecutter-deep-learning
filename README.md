@@ -79,3 +79,5 @@ The directory structure of your new project looks like this:
 ├── tests                   <- Files necessary for running tests.
 └── run.py                  <- Simplifies the execution of one or more of the src scripts 
 ```
+
+## TODO: update tests
