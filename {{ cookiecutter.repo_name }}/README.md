@@ -51,7 +51,9 @@ Project Structure
 	│   └── visualization       <- Scripts to create exploratory and results oriented visualizations
 	│       └── visualize.py
 	├── tests                   <- Files necessary for running tests.
-	└── run.py                  <- Simplifies the execution of one or more of the src scripts 
+	├── run.py                  <- Simplifies the execution of one or more of the src scripts 
+	└── requirements.txt 		<- The requirements file for reproducing the analysis environment, e.g.
+                         			generated with `pip freeze > requirements.txt`. It will be used by docker.
 
 
 
